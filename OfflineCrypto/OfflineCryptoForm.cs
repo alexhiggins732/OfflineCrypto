@@ -155,7 +155,7 @@ namespace OfflineCrypto
             AES_Decrypt(txtFile.Text, txtAesPlain.Text);
         }
 
-
+   
         private void AES_Encrypt(string inputFile, string password)
         {
             //http://stackoverflow.com/questions/27645527/aes-encryption-on-large-files

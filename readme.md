@@ -2,14 +2,14 @@
 Created by https://twitter.com/kr3at to allow offline Asymmetric Key Exchange using RSA for exchange of AES encrypted messages.
 
 Usage:
-You can download and exract the compiled binaries contained in OfflineCrypto.zip and follow the instructions below.
+You can download and extract the compiled binaries contained in OfflineCrypto.zip and follow the instructions below.
 
 Alternately, you can clone the source from https://github.com/alexhiggins732/OfflineCrypto. The code is a .Net Framework 4.8 Windows Form application is written in C# using Visual Studio 2019. The code should compile in earlier versions.
 
 ## Receiving And Decrypting Encrypted Data
 
 **Generate an RSA Key**
-![Step 1](https://pbs.twimg.com/profile_images/884267800/ah_400x400.jpg)
+![Step 1](docs/step1.png)
 
  - *Optional: Select an RSA Key Size. By default the most secure option.*
  - 16834 is selected Click Generate.
@@ -62,12 +62,42 @@ The entire process, as describe in the above two steps, from end to end.
  14. Alice browses for the encrypted file Bob sent her.
  15. Alice clicks Decrypt in the File group box to decrypt the file. 
 
+## Key Examples
+An RSA **Public** key will contain an XML string and have a child Modulus and Exponent element. It will look similar to this:
+```markup
+<RSAKeyValue>
+  <Modulus>va20t6+MzXbQlnzSvq5sOhvWPb5dcvB7tg9kdet9xvCFkBtHdGdevjTQiE1ww0tx1SBO0aGdQRtfrJexR2yvU5HYTq6wg5fG5vAAEOgNikZUUuKobhE9+9bLKIHE3VYJ0LhZm+HEK+nnI4yp5HCGHkKbvG57IvmCU0d10VKlre0=</Modulus>
+  <Exponent>AQAB</Exponent>
+</RSAKeyValue>
+```
+An RSA **Private** key will contain an XML string and have a child Modulus, Exponent, P, Q, DP, DQ, InverseQ, and D element. It will look similar to this:
+```markup
+<RSAKeyValue>
+  <Modulus>va20t6+MzXbQlnzSvq5sOhvWPb5dcvB7tg9kdet9xvCFkBtHdGdevjTQiE1ww0tx1SBO0aGdQRtfrJexR2yvU5HYTq6wg5fG5vAAEOgNikZUUuKobhE9+9bLKIHE3VYJ0LhZm+HEK+nnI4yp5HCGHkKbvG57IvmCU0d10VKlre0=</Modulus>
+  <Exponent>AQAB</Exponent>
+  <P>7e2btsf3Ps7g9HFY1nJI89v032tmLhpnyVp0/xexNGluebbupiIEHam0/gFBYmUI44C0MWyCNh2lFAcRECyvKw==</P>
+  <Q>zBXojwXGF6q9qe9LneAs0bPZiC7+WvbwVwyVyvImTI06/k+ZOVf1ufwwBgRo27JTzgndqC8y3Hi9uKZQ+Q7LRw==</Q>
+  <DP>yr0BRoq2H4rhHOnIrVLM3x66VfaKJxbRAT5XG1bw5JxCSuyaBm5N24jUdOxU7qbxIAp3gPXZLousMpii7Yll6Q==</DP>
+  <DQ>ANmig14Byj1y1s9hYEH7zc/S+yc+9gALVkF+Kj9B+5WnBkIsoDmGk4TCanQAP9IJWVVfMAEqVBLIr4k50x/Fpw==</DQ>
+  <InverseQ>fflpgDF2IzU1TO5LjHAzo8H45HsMNXJ1WHYYfYyxF2g/+fJULtK4rusHaiSpOwy8+L5jyu9Z3mKDi4vyCpCYaw==</InverseQ>
+  <D>R4NngF3Co3CpgiN7vYK7sUjvhIXya7R5oBG7ma341Pm4EbYHQb77fJEjElDINAmM2IL+1JCvXm24q7ThlQFINH5AbzQOVBsozRxhFB2qKjfGYACZMUTTN8I7iuzLqY5FU2YwLHoUiT5StQYFjR+YnIhaRYitmJ0Y1aklSrgOP20=</D>
+</RSAKeyValue>
+```
+An AES Key is composed of plain text and can be anything that is at least 32 characters. For example:
+
+    tH!2 is s0m3 v3RY 53cUR3 v3rY lOng pa22WOrD tO pRo73Ct MY f1L3s
+
+Your AES Base64 key with contain a Base 64 string containing the RSA encrypted AES Key. For example:
+
+    rlQnRMSSjNKklVBQK/1pUBVd3vV03OGm+ZCn8PKhFV27fVfLc7kNKb0PAbnlW9HIBK0QolaDMe1Jrb+515dsah40hwuSc/HQiMjBrFEYFhwR13zZ9n9MpUAGTg81W47b44CtRZGKGhRBQmtMTOu4SJBnfQoPrTLd5hBYh8cicFs=
+
 ## Roadmap
 
 If the community finds this tool useful future enhancements may be:
  - RSA encrypt the salt in the header of the AES files.
  - Add text boxes for encrypting and decrypting plain text
- - Implement additional encryption algorithms.
+ - Implement additional algorithms such as PGP
+ - Implement different Key Exchange algorithms such as Diffie Hellman.
  - Ability save and load keys from files, including JSON, XML, PEM, PFK and CRT files.
  - Networking Capabilities for Online Data Exchange and Messaging. - 
 
