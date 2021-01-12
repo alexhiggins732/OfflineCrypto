@@ -1,6 +1,7 @@
-﻿namespace RsaCrypto
+﻿namespace OfflineCrypto
+
 {
-    partial class Form1
+    partial class OfflineCryptoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfflineCryptoForm));
             this.txtFile = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,12 +43,12 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.txtKey = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblAesDecoded = new System.Windows.Forms.Label();
             this.btnAesDecrypt = new System.Windows.Forms.Button();
             this.txtAesBase64 = new System.Windows.Forms.TextBox();
             this.btnAesEncrypt = new System.Windows.Forms.Button();
             this.txtAesPlain = new System.Windows.Forms.TextBox();
-            this.lblAesDecoded = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmKeySize)).BeginInit();
@@ -221,6 +223,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "AES Key";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Aes Base64";
+            // 
+            // lblAesDecoded
+            // 
+            this.lblAesDecoded.AutoSize = true;
+            this.lblAesDecoded.Location = new System.Drawing.Point(6, 24);
+            this.lblAesDecoded.Name = "lblAesDecoded";
+            this.lblAesDecoded.Size = new System.Drawing.Size(46, 13);
+            this.lblAesDecoded.TabIndex = 8;
+            this.lblAesDecoded.Text = "Aes Key";
+            // 
             // btnAesDecrypt
             // 
             this.btnAesDecrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -261,25 +281,7 @@
             this.txtAesPlain.Size = new System.Drawing.Size(670, 20);
             this.txtAesPlain.TabIndex = 0;
             // 
-            // lblAesDecoded
-            // 
-            this.lblAesDecoded.AutoSize = true;
-            this.lblAesDecoded.Location = new System.Drawing.Point(6, 24);
-            this.lblAesDecoded.Name = "lblAesDecoded";
-            this.lblAesDecoded.Size = new System.Drawing.Size(46, 13);
-            this.lblAesDecoded.TabIndex = 8;
-            this.lblAesDecoded.Text = "Aes Key";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Aes Base64";
-            // 
-            // Form1
+            // OfflineCryptoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,8 +289,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "OfflineCryptoForm";
+            this.Text = "Kr3at\'s Offline Crypto Utility";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

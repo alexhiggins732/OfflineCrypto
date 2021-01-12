@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace RsaCrypto
+namespace OfflineCrypto
 {
-    public partial class Form1 : Form
+    public partial class OfflineCryptoForm : Form
     {
-        public Form1()
+        public OfflineCryptoForm()
         {
             InitializeComponent();
         }
