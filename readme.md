@@ -9,7 +9,7 @@ Alternately, you can clone the source from https://github.com/alexhiggins732/Off
 ## Receiving And Decrypting Encrypted Data
 
 **Generate an RSA Key**
-![Step 1](docs/step1.png)
+![Step 1](https://github.com/alexhiggins732/OfflineCrypto/blob/master/docs/Step1.png)
 
  - *Optional: Select an RSA Key Size. By default the most secure option.*
  - 16834 is selected Click Generate.
